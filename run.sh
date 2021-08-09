@@ -34,7 +34,7 @@ ostype()
      *) echo "other system $osname"
      ;;
     esac
-  return 0exit
+  return 0
 
 }
 ostype
