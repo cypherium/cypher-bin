@@ -188,7 +188,7 @@ Check:Committee functions
    List the accounts which does not signature the specify txBlockNumber(such as `13698`)
 #### 3.cph.takePartInNumbers("0xca6df652714911b4c6d14881c143cc09e9ad61c0",492)   
    List the specify account(such as `0xca6df652714911b4c6d14881c143cc09e9ad61c0`) take part in signature txBlock numbers at param 2 keyBlockNumber(value is `492`) height.
-   if is null,it dose take part in any consensus at the keyBlockNumber height.
+   if is null,it don't take part in any consensus at the keyBlockNumber height.
 
 ---
 
