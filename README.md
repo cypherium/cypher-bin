@@ -184,7 +184,7 @@ Check:Committee functions
   List the committee members for specify keyBlockNumber(such as `230`).Based on node's role,address's section display:
    * common node,the address section is blank;
    * committee member node,the address section is ip address.
-#### 2.cph.cph.committeeExceptions(13698)   
+#### 2.cph.committeeExceptions(13698)   
    List the accounts which does not signature the specify txBlockNumber(such as `13698`)
 #### 3.cph.takePartInNumbers("0xca6df652714911b4c6d14881c143cc09e9ad61c0",492)   
    List the specify account(such as `0xca6df652714911b4c6d14881c143cc09e9ad61c0`) take part in signature txBlock numbers at param 2 keyBlockNumber(value is `492`) height.
