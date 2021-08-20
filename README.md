@@ -189,7 +189,7 @@ List the accounts which does not signature the specify txBlockNumber(such as `13
 List the specify account(such as `0xca6df652714911b4c6d14881c143cc09e9ad61c0`) take part in signature txBlock numbers at param 2 keyBlockNumber(value is `492`) height.
 if is null,it don't take part in any consensus at the keyBlockNumber height.
 
-More APi
+More APIs
 ---
 [cypherium apis](https://github.com/cypherium/cypherBFTBin/doc/cypherium-rpc-api.docx)
 
