@@ -191,6 +191,6 @@ if is null,it don't take part in any consensus at the keyBlockNumber height.
 
 More APIs
 ---
-[cypherium apis](https://github.com/cypherium/cypherBFTBin/doc/cypherium-rpc-api.docx)
+[cypherium apis](https://github.com/cypherium/cypherBFTBin/blob/main/doc/cypherium-rpc-api.docx)
 
 
