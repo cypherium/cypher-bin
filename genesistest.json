@@ -1,6 +1,6 @@
 {
   "config": {
-    "chainId": 12123,
+    "chainId": 12124,
     "committee":{
       "0": {
         "address": "40.112.63.247:7100",
@@ -52,6 +52,7 @@
         "coinbase": "ba9fa9a9dd3e51d3c6ddc9546be87627fc7a4bdf",
         "public": "9b1e3778c15bac3f610a95326b6ed9038f0e94083a6002ff81368db66f2ba102766f2441c667f33ee42740467771002421cf4616f9a126353064b6283d549820"
       }
+
 
     }
   },
