@@ -66,7 +66,7 @@ echo "ip: $ip"
 echo "bootnode address: $bootnode_addr"
 echo "Client print mode:$CLIMODE,please wait for some seconds!"
 if [[ "$CLIMODE" == "$CLISILENTMODE" || "$CLIMODE" == "0" || "$CLIMODE" == " " ]];then
-   nohup $BINDIR --nat=extip:$ip --ws   -wsaddr="0.0.0.0" --wsorigins "*" --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcapi cph,web3c,personal,miner,txpool,net --rnetport $RNET_PORT --port $P2P_PORT --rpcport $RPC_PORT --verbosity $LOGLEVEL --datadir $CHAINDB --networkid $NetWorkId --gcmode archive --bootnodes $bootnode_addr --mine   > "$OUTPUTLOG" 2>&1 &
+   nohup $BINDIR --nat=extip:$ip --ws   -wsaddr="0.0.0.0" --wsorigins "*" --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --targetgaslimit "8500000" --rpcapi cph,eth,web3c,personal,miner,txpool,net --rnetport $RNET_PORT --port $P2P_PORT --rpcport $RPC_PORT --verbosity $LOGLEVEL --datadir $CHAINDB --networkid $NetWorkId --gcmode archive --bootnodes $bootnode_addr --mine   > "$OUTPUTLOG" 2>&1 &
 else
-         $BINDIR --nat=extip:$ip --ws   -wsaddr="0.0.0.0" --wsorigins "*" --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcapi cph,web3c,personal,miner,txpool,net --rnetport $RNET_PORT --port $P2P_PORT --rpcport $RPC_PORT --verbosity $LOGLEVEL --datadir $CHAINDB --networkid $NetWorkId --gcmode archive --bootnodes "$bootnode_addr" --mine console
+         $BINDIR --nat=extip:$ip --ws   -wsaddr="0.0.0.0" --wsorigins "*" --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --targetgaslimit "8500000" --rpcapi cph,eth,web3c,personal,miner,txpool,net --rnetport $RNET_PORT --port $P2P_PORT --rpcport $RPC_PORT --verbosity $LOGLEVEL --datadir $CHAINDB --networkid $NetWorkId --gcmode archive --bootnodes "$bootnode_addr" --mine console
 fi
