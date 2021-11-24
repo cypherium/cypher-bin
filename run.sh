@@ -49,9 +49,6 @@ if [[ "$select" == "test" ]];then
         BINDIR="./$OSTYPE/cyphertest"
         CHAINDB="./$OSTYPE/chaindbtest"
         OUTPUTLOG="cypherlogtest.txt"
-        RNET_PORT=7102
-        P2P_PORT=6002
-        RPC_PORT=8002
         GENESIS_FILE="genesistest.json"
 fi
 
