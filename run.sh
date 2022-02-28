@@ -2,7 +2,6 @@
 BOOTDIR="./bootnode.txt"
 OUTPUTLOG="./cypherlog.txt"
 LOGLEVEL=4
-bootnode_addr=cnode://"$(grep cnode $BOOTDIR|tail -n 1|awk -F '://' '{print $2}')"
 
 IPENCDISVALUE=1
 CONSOLEMODE="--console"
@@ -50,6 +49,7 @@ if [[ "$select" == "test" ]];then
         CHAINDB="./$OSTYPE/chaindbtest"
         OUTPUTLOG="cypherlogtest.txt"
         GENESIS_FILE="genesistest.json"
+        BOOTDIR="./bootnodetest.txt"
 fi
 
 echo "CHAINDB $CHAINDB"
@@ -60,6 +60,7 @@ NetWorkId=`less $GENESIS_FILE|awk -F "[:]" '/chainId/{print $2}'`
 NetWorkId=`echo $NetWorkId | cut -d \, -f 1`
 ip=`curl icanhazip.com`
 echo "ip: $ip"
+bootnode_addr=cnode://"$(grep cnode $BOOTDIR|tail -n 1|awk -F '://' '{print $2}')"
 echo "bootnode address: $bootnode_addr"
 echo "Client print mode:$CLIMODE,please wait for some seconds!"
 if [[ "$CLIMODE" == "$CLISILENTMODE" || "$CLIMODE" == "0" || "$CLIMODE" == " " ]];then
