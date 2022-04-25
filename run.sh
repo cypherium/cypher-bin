@@ -2,7 +2,6 @@
 BOOTDIR="./bootnode.txt"
 OUTPUTLOG="./cypherlog.txt"
 LOGLEVEL=4
-
 IPENCDISVALUE=1
 CONSOLEMODE="--console"
 BACKENDMODE="--backend"
@@ -64,7 +63,7 @@ bootnode_addr=cnode://"$(grep cnode $BOOTDIR|tail -n 1|awk -F '://' '{print $2}'
 echo "bootnode address: $bootnode_addr"
 echo "Client print mode:$CLIMODE,please wait for some seconds!"
 if [[ "$CLIMODE" == "$CLISILENTMODE" || "$CLIMODE" == "0" || "$CLIMODE" == " " ]];then
-   nohup $BINDIR --nat=extip:$ip --ws   -wsaddr="0.0.0.0" --wsorigins "*" --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --targetgaslimit "8500000" --rpcapi cph,eth,web3c,personal,miner,txpool,net --rnetport $RNET_PORT --port $P2P_PORT --rpcport $RPC_PORT --verbosity $LOGLEVEL --datadir $CHAINDB --networkid $NetWorkId --gcmode archive --bootnodes $bootnode_addr --mine   > "$OUTPUTLOG" 2>&1 &
+   nohup $BINDIR --nat=extip:$ip --ws  --ropsten -wsaddr="0.0.0.0" --wsorigins "*" --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --targetgaslimit "8500000" --rpcapi cph,eth,web3c,personal,miner,txpool,net --rnetport $RNET_PORT --port $P2P_PORT --rpcport $RPC_PORT --verbosity $LOGLEVEL --datadir $CHAINDB --networkid $NetWorkId --gcmode archive --bootnodes $bootnode_addr --mine   > "$OUTPUTLOG" 2>&1 &
 else
-         $BINDIR --nat=extip:$ip --ws   -wsaddr="0.0.0.0" --wsorigins "*" --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --targetgaslimit "8500000" --rpcapi cph,eth,web3c,personal,miner,txpool,net --rnetport $RNET_PORT --port $P2P_PORT --rpcport $RPC_PORT --verbosity $LOGLEVEL --datadir $CHAINDB --networkid $NetWorkId --gcmode archive --bootnodes "$bootnode_addr" --mine console
+         $BINDIR --nat=extip:$ip --ws  --ropsten -wsaddr="0.0.0.0" --wsorigins "*" --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --targetgaslimit "8500000" --rpcapi cph,eth,web3c,personal,miner,txpool,net --rnetport $RNET_PORT --port $P2P_PORT --rpcport $RPC_PORT --verbosity $LOGLEVEL --datadir $CHAINDB --networkid $NetWorkId --gcmode archive --bootnodes "$bootnode_addr" --mine console
 fi
