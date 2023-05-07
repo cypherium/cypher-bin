@@ -1,2 +1,2 @@
-UDP listener up                          self=enode://55ddec1393e03549df07ab937d1043297d5e5a20353ee5d244064b16e45ce5142bacf617aa0c06e19213eb1c00baf116145494e361ca4cbc202aeee9ba90ddc7@182.160.25.155:6000
+UDP listener up                          self=enode://73fc814b764b6ae41b71ee3f7b00def362bbbdb8eb3e366ad2358a1500f8f8bfa26c9b5bf2c4c50719bef23ec52645a946842eba58e968c70c7a7ef0dfdb9e50@119.8.149.6:6000
 
