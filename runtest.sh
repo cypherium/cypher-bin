@@ -36,8 +36,8 @@ ostype()
 
 }
 ostype
-CHAINDB="./$OSTYPE/chaindb"
-BINDIR="./$OSTYPE/cypher"
+CHAINDB="./database/chaindb"
+BINDIR="./database/cypher"
 RNET_PORT=7100
 P2P_PORT=6000
 RPC_PORT=8000
@@ -45,8 +45,8 @@ select=$2
 echo "select $select"
 GENESIS_FILE="genesis.json"
 if [[ "$select" == "test" ]];then
-        BINDIR="./$OSTYPE/cypher$select"
-        CHAINDB="./$OSTYPE/chaindb$select"
+        BINDIR="./database/cypher$select"
+        CHAINDB="./database/chaindb$select"
         OUTPUTLOG="./cypherlog$select.txt"
         GENESIS_FILE="./genesis$select.json"
         BOOTDIR="./bootnode$select.txt"

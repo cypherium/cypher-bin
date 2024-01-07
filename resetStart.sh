@@ -27,11 +27,11 @@ ostype()
 ostype
 select=$2
 
-CHAINDB="./$OSTYPE/chaindb"
-BINDIR="./$OSTYPE/cypher"
+CHAINDB="./database/chaindb"
+BINDIR="./database/cypher"
 if [[ "$select" == "test" ]];then
-        BINDIR="./$OSTYPE/cyphertest"
-        CHAINDB="./$OSTYPE/chaindbtest"
+        BINDIR="./database/cyphertest"
+        CHAINDB="./database/chaindbtest"
         GENESISDIR="./genesistest.json"
         OUTPUTLOG="cypherlogtest.txt"
 fi
