@@ -6,7 +6,7 @@ Cypherium is a derivative blockchain system compatible with Ethereum. With the i
 Public iP for VPS is needed
 --
 Your ip of your machine or VPS which used to deploy cypher node  must be `public IP`.such AWS ec2 which has `public IP` to deploy your cypher node!
-Open Consensus port `7100` (UDP), P2P block synchronous port `6000`(TCP and UDP), RPC port `18004` (TCP). The P2P port and RPC port can be any port that is not occupied by the system.
+Open Consensus port `7100` (UDP), P2P block synchronous port `6000` and `30301` (TCP and UDP) , RPC port `8000` (TCP). The P2P port and RPC port can be any port that is not occupied by the system.
 If no `POST, CURL, GET` or other RPC requests are sent to this node, the RPC port should be closed to prevent possible network attacks.
 
 Install the openssl
