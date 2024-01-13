@@ -28,9 +28,9 @@ ostype
 select=$2
 
 CHAINDB="./database/chaindb"
-BINDIR="./database/cypher"
+BINDIR="./database/$OSTYPE/cypher"
 if [[ "$select" == "test" ]];then
-        BINDIR="./database/cyphertest"
+        BINDIR="./database/$OSTYPE/cyphertest"
         CHAINDB="./database/chaindbtest"
         GENESISDIR="./genesistest.json"
         OUTPUTLOG="cypherlogtest.txt"
@@ -39,6 +39,6 @@ fi
 #echo "CHAINDB $CHAINDB"
 #echo "BINDIR $BINDIR"
 
-sudo rm -rf $CHAINDB/cypher* $OUTPUTLOG
+sudo rm -rf $CHAINDB/cypher/* $OUTPUTLOG
 $BINDIR --datadir $CHAINDB init $GENESISDIR
 ./start.sh $1 $2

@@ -1,7 +1,7 @@
 
 Operating system support
 ---
-Cypherium is compatible with Mac, Windows, and Linux operating system.
+Cypherium is a derivative blockchain system compatible with Ethereum. With the integration of blockchains connected to various consensus chains, it will run mixed signature accounts such as ed22519 and ecdsa. This version only supports transaction signatures for ECDSA and consensus signatures for ED25519. To participate in consensus, it is necessary to create a new account through the client-side personan.newAccountEd25519 in order to participate and receive a coin reward. It will be used as a weighted coin to participate in the subsequent consensus and enter the committee. After supporting transactions with ed25519, it can participate in the transfer of this account.
 
 Public iP for VPS is needed
 --
@@ -82,11 +82,11 @@ Congratulations! You have successfully started the Cypherium Node!
    * start
 
      ```for linux
-     ./linux/cypher --nat "none" --ws  txpool --rnetport 7100 -wsaddr="0.0.0.0" --wsorigins "*" --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcapi cph,web3,personal,miner --port 6000 --rpcport 18004 --verbosity 4 --datadir ./linux/chaindb --networkid 16162 --gcmode archive --bootnodes "cnode://098c1149a1476cf44ad9d480baa67d956715b8671a4915bed17d06a1cafd7b154bc1841d451d80d391427ebc48aaa3216d4e8a2b46544dffdc61b76be6475418@13.72.80.40:9090"  console 2>"cypherlog.txt"
+     ./linux/cypher --nat "none" --ws  txpool --rnetport 7100 -wsaddr="0.0.0.0" --wsorigins "*" --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcapi eth,web3,personal,miner --port 6000 --rpcport 18004 --verbosity 4 --datadir ./linux/chaindb --networkid 16162 --gcmode archive --bootnodes "cnode://098c1149a1476cf44ad9d480baa67d956715b8671a4915bed17d06a1cafd7b154bc1841d451d80d391427ebc48aaa3216d4e8a2b46544dffdc61b76be6475418@13.72.80.40:9090"  console 2>"cypherlog.txt"
      ```
       
      ```for mac
-     ./mac/cypher --nat "none" txpool --rnetport 7100 --ws   -wsaddr="0.0.0.0" --wsorigins "*" --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcapi cph,web3,personal,miner --port 6000 --rpcport 18004 --verbosity 4 --datadir ./mac/chaindb --networkid 16162 --gcmode archive --bootnodes "cnode://098c1149a1476cf44ad9d480baa67d956715b8671a4915bed17d06a1cafd7b154bc1841d451d80d391427ebc48aaa3216d4e8a2b46544dffdc61b76be6475418@13.72.80.40:9090"  console 2>"cypherlog.txt"
+     ./mac/cypher --nat "none" txpool --rnetport 7100 --ws   -wsaddr="0.0.0.0" --wsorigins "*" --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 --rpcapi eth,web3,personal,miner --port 6000 --rpcport 18004 --verbosity 4 --datadir ./mac/chaindb --networkid 16162 --gcmode archive --bootnodes "cnode://098c1149a1476cf44ad9d480baa67d956715b8671a4915bed17d06a1cafd7b154bc1841d451d80d391427ebc48aaa3216d4e8a2b46544dffdc61b76be6475418@13.72.80.40:9090"  console 2>"cypherlog.txt"
        ```
        
   #### start up parameters help
@@ -101,13 +101,13 @@ Congratulations! You have successfully started the Cypherium Node!
    * `--addr` HTTP-RPC server listening interface (default: `localhost`)
    * `--rpcport` HTTP-RPC server listening port (default: `8000`)
    * `--port` P2P listening port (default: `6000`)
-   * `--api` API's offered over the HTTP-RPC interface (default: `cph,net,web3`)
+   * `--api` API's offered over the HTTP-RPC interface (default: `eth,net,web3`)
    * `--corsdomain` Comma separated list of domains from which to accept cross origin requests (browser enforced)
    * `--ws` Enable the WS-RPC server
    * `--wsaddr` WS-RPC server listening interface (default: `localhost`)
    * `--wsport` WS-RPC server listening port (default: `8000`)
    * `--wsorigins` Origins from which to accept websockets requests
-   * `--rpcapi` API's offered over the IPC-RPC interface (default: `admin,debug,cph,miner,net,personal,shh,txpool,web3`)
+   * `--rpcapi` API's offered over the IPC-RPC interface (default: `admin,debug,eth,miner,net,personal,shh,txpool,web3`)
    * `--ipcpath` Filename for IPC socket/pipe within the datadir (explicit paths escape it)
    * `--nat value`  NAT port mapping mechanism (any|none|upnp|pmp|extip:<IP>) (default: "any")
    * `--rnetport` Committee consensus port(default: `7100`)
@@ -149,7 +149,7 @@ Troubleshooting
 With the database up and running, try out these commands
 ---
 
-#### 1. cph.txBlockNumber
+#### 1. eth.txBlockNumber
 Check the transaction block height.
 #### 2. personal.newAccount("cypher2019xxddlllaaxxx")
 New one account,Among " " your should assign one password.
@@ -158,14 +158,14 @@ New one account,Among " " your should assign one password.
 List the peer nodes's detail from  P2P network.
 #### 4. admin.peers
 List the number of peer nodes from  P2P network.
-#### 5. cph.accounts
+#### 5. eth.accounts
 List all the accounts
-#### 6. cph.getBalance(...)
+#### 6. eth.getBalance(...)
 Get the balance by specify one account.
-cph.getBalance("0x2dbde7263aaaf1286b9c41b1138191e178cb2fd4")
+eth.getBalance("0x2dbde7263aaaf1286b9c41b1138191e178cb2fd4")
    The string of “ 0x2dbde7263aaaf1286b9c41b1138191e178cb2fd4” is your wallet account.
 This wallet account string you shoud copy and store it when you executiong comand
- “ personal.newAccount(...) “; also your can using command “ cph.accounts ” to find if from  serveal acccounts.
+ “ personal.newAccount(...) “; also your can using command “ eth.accounts ” to find if from  serveal acccounts.
 
 Txpool
 --
@@ -181,8 +181,8 @@ Manual send transaction demonstration
 Check this through “cph.accounts”.If you do not have,please new two accouts by using comand “ personal.newAccount() “
 #### 2. check your account balance
 ```
- cph.getBalance("0x461f9d24b10edca41c1d9296f971c5c028e6c64c")
- cph.getBalance("0x01482d12a73186e9e0ac1421eb96381bbdcd4557")
+ eth.getBalance("0x461f9d24b10edca41c1d9296f971c5c028e6c64c")
+ eth.getBalance("0x01482d12a73186e9e0ac1421eb96381bbdcd4557")
 ```
 #### 3. unlock your account
 ```
@@ -190,12 +190,12 @@ personal.unlockAccount("0x461f9d24b10edca41c1d9296f971c5c028e6c64c")
 ```
 #### 4. sendTransaction
 ```
-cph.sendTransaction({from:'461f9d24b10edca41c1d9296f971c5c028e6c64c',to: '01482d12a73186e9e0ac1421eb96381bbdcd4557', value: 1000000000000000000})
+eth.sendTransaction({from:'0x461f9d24b10edca41c1d9296f971c5c028e6c64c',to: '0x01482d12a73186e9e0ac1421eb96381bbdcd4557', value: 1000000000000000000})
 ```
 #### 5. wait several seconds to checkout balance
 ```
- cph.getBalance("0x461f9d24b10edca41c1d9296f971c5c028e6c64c")
- cph.getBalance("0x01482d12a73186e9e0ac1421eb96381bbdcd4557")
+ eth.getBalance("0x461f9d24b10edca41c1d9296f971c5c028e6c64c")
+ eth.getBalance("0x01482d12a73186e9e0ac1421eb96381bbdcd4557")
 ```
 RUN:Operator miner functions
 ---
@@ -210,28 +210,16 @@ You will wait minimum 1 hour to check with command function for miner.status() t
 If you are node accounts status is "I'm committee member, Doing consensus." or "I'm leader, Doing consensus."your account have been chosen into committee successfully:
 
 
-Finally,after waiting about 1 hour you can check you account’s balance through function for cph.getBalance()
+Finally,after waiting about 1 hour you can check you account’s balance through function for eth.getBalance()
 #### 3. miner.content()
 You can check miner’s candidate from yourself and other nodes.
-
 
 #### 4. miner.stop()
 Stop the to find candidate to take part in consensus.
 
-Check:Committee functions
----
-#### 1. cph.committeeMembers(230)
-List the committee members for specify keyBlockNumber(such as `230`).Based on node's role,address's section display:
-   * common node,the address section is blank;
-   * committee member node,the address section is ip address.
-#### 2. cph.committeeExceptions(13698)   
-List the accounts which does not signature the specify txBlockNumber(such as `13698`)
-#### 3. cph.takePartInNumbers("0xca6df652714911b4c6d14881c143cc09e9ad61c0",492)   
-List the specify account(such as `0xca6df652714911b4c6d14881c143cc09e9ad61c0`) take part in signature txBlock numbers at param 2 keyBlockNumber(value is `492`) height.
-if is null,it don't take part in any consensus at the keyBlockNumber height.
 
 More APIs
 ---
-[cypherium apis](https://github.com/cypherium/cypherBFTBin/blob/main/doc/cypherium-rpc-api.docx)
+[ref eth apis](https://geth.ethereum.org/docs)
 
 
