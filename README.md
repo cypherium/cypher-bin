@@ -40,8 +40,8 @@ Download repository
     ```
  #### 2. Open the terminal and clone repository:
  ```
-  git clone https://github.com/cypherium/cypherBFTBin.git
-  cd cypherBFTBin
+  git clone https://github.com/cypherium/cypher-bin.git
+  cd cypher-bin
   ls
  ```
  #### 3.List the mainly use files
