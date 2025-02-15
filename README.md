@@ -145,6 +145,10 @@ Troubleshooting
    * Execute command `sudo chmod -R 777 .` when your current directory path is at `../cypherBFTBin/`
    * Execute `sudo rm -rf chaindb` to delete the database. Then, regenerate the database by executing `./cypher -–datadir chaindb  init ../genesis.json`
    * Execute shell `./resetStart.sh` can delete database automic,and restart directly.As soon as you finding the chainId is different from previous chaindId which is checked through executing
+   #### If you get a libcrypto.so.1.0.0 or openssl 1.0.0 error and you're using unbuntu 
+   * Execute command `wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5.13_amd64.deb` to download the proper libraries to resolve the issue
+   * Execute command `sudo dpkg -i libssl1.0.0_1.0.2n-1ubuntu5.13_amd64.deb` to install the package
+   * Execute shell `./resetStart.sh` and it will now load properly
 
 With the database up and running, try out these commands
 ---
