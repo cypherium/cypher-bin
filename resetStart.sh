@@ -39,6 +39,7 @@ fi
 #echo "CHAINDB $CHAINDB"
 #echo "BINDIR $BINDIR"
 
-sudo rm -rf $CHAINDB/cypher/* $OUTPUTLOG
+#sudo rm -rf $CHAINDB/cypher/* $OUTPUTLOG
+sudo rm -rf $OUTPUTLOG
 $BINDIR --datadir $CHAINDB init $GENESISDIR
 ./start.sh $1 $2

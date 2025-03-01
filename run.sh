@@ -1,7 +1,7 @@
 #!/bin/bash
 BOOTDIR="./bootnode.txt"
 OUTPUTLOG="./cypherlog.txt"
-LOGLEVEL=2
+LOGLEVEL=3
 
 IPENCDISVALUE=1
 CONSOLEMODE="--console"
@@ -66,5 +66,6 @@ echo "Client print mode:$CLIMODE,please wait for some seconds!"
 if [[ "$CLIMODE" == "$CLISILENTMODE" || "$CLIMODE" == "0" || "$CLIMODE" == " " ]];then
    nohup $BINDIR --nat=extip:$ip  --syncmode full --allow-insecure-unlock --http.corsdomain "*" --http.addr 0.0.0.0 --rpc.gascap 0 --rpc.txfeecap 1000 --http --http.api eth,web3,net,personal,miner,txpool --rnetport $RNET_PORT --port $P2P_PORT --http.port $RPC_PORT --verbosity $LOGLEVEL  --datadir $CHAINDB --networkid $NetWorkId  --bootnodes "$bootnode_addr"    > "$OUTPUTLOG" 2>&1 &
 else
-         $BINDIR --verbosity "$LOGLEVEL" --rnetport 7100 --syncmode full  --nat=extip:$ip --allow-insecure-unlock --ws --ws.addr="0.0.0.0" --ws.port 8546  --ws.origins "*" --http.corsdomain "*" --http.addr 0.0.0.0 --http --http.api eth,web3,net,personal,miner,txpool --port 6000 --http.port 8000 --targetgaslimit "3758096384" --datadir $CHAINDB --networkid $NetWorkId --gcmode archive --datadir $CHAINDB --bootnodes "$bootnode_addr"  console
+         $BINDIR --nat "none" --datadir $CHAINDB --verbosity 3 --syncmode full --allow-insecure-unlock --http.corsdomain "*" --http.addr 0.0.0.0 --rpc.gascap 0 --rpc.txfeecap 1000 --http --http.api eth,web3,net,personal,txpool --http.port $RPC_PORT --bootnodes "enode://a294a4d23b3c0671eac267ae0df03487e79ae58f52b668514e3510a292a13853dd3070deb6f703fe2c92a68609fcfd603cd6e7cf6ddb418fa523612285219293@218.185.241.185:30301" --metrics --networkid 16166 console
+         #$BINDIR --verbosity "$LOGLEVEL" --rnetport 7100 --syncmode full  --nat=extip:$ip --allow-insecure-unlock --ws --ws.addr="0.0.0.0" --ws.port 8546  --ws.origins "*" --http.corsdomain "*" --http.addr 0.0.0.0 --http --http.api eth,web3,net,personal,miner,txpool --port 6000 --http.port 8000 --targetgaslimit "3758096384" --datadir $CHAINDB --networkid $NetWorkId --gcmode archive --datadir $CHAINDB --bootnodes "$bootnode_addr"  console
 fi
