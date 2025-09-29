@@ -149,10 +149,11 @@ Troubleshooting
 With the database up and running, try out these commands
 ---
 
-#### 1. eth.txBlockNumber
+#### 1. eth.blockNumber
 Check the transaction block height.
-#### 2. personal.newAccount("cypher2019xxddlllaaxxx")
+#### 2. personal.newAccount("cypher2019xxddlllaaxxx") or personal.newAccountEd25519("cypher2019xxddlllaaxxx")
 New one account,Among " " your should assign one password.
+newAccount will create eth compatible account;newAccountEd25519 will create miner work account.
 
 #### 3. net
 List the peer nodes's detail from  P2P network.
